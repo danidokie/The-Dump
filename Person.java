@@ -1,7 +1,7 @@
-public class Person implements Comparable<Person>
+public class Person
 {
-   private String name;
-   private int age;
+   protected String name;
+   protected int age;
    
    public Person(String name, int age)
    {
@@ -9,41 +9,14 @@ public class Person implements Comparable<Person>
       this.age = age;
    }
    
-   public int compareTo(Person o)//o = other
-   {
-      if(age == o.getAge())//if ages are the same
-      {
-         return name.compareTo(o.getName());//compare names
-      }
-      else
-      {
-         return age - o.getAge();//otherwise compare ages 
-      }
-   }
-   
-   @Override
-   public String toString()
-   {
-      return String.format("Name: %s, Age: %d", name, age);
-   }
-   
    public String getName()
    {
       return name;
    }
    
-   public void setName()
+   @Override
+   public String toString()
    {
-      this.name = name;
-   }
-   
-   public int getAge()
-   {
-      return age;
-   }
-   
-   public void setAge()
-   {
-      this.age = age;
+      return String.format("Name: %s  Age: %d", name, age);
    }
 }
